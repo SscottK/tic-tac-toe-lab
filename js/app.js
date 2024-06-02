@@ -24,7 +24,7 @@ const resetButtonEl = document.querySelector("#reset");
 /*-------------------------------- Functions --------------------------------*/
 const init = () => {
   board = ["", "", "", "", "", "", "", "", ""];
-  turn = "X";
+  turn = "🎆";
   winner = false;
   tie = false;
   render();
@@ -44,8 +44,8 @@ const updateBoard = () => {
 const handleClick = (event) => {
   const squareIndex = Number(event.target.id);
   if (
-    event.target.textContent === "X" ||
-    event.target.textContent === "O" ||
+    event.target.textContent === "🎆" ||
+    event.target.textContent === "🎇" ||
     winner === true
   ) {
     return;
@@ -60,7 +60,7 @@ const handleClick = (event) => {
 
 const updateMessage = () => {
   if (tie === true) {
-    messageEl.textContent = "Cat's Game!";
+    messageEl.textContent = "🐱's Game!";
   } else if (winner === true) {
     messageEl.textContent = `${turn} is the winner!`;
   } else {
@@ -95,10 +95,10 @@ const chechForTie = () => {
 const switchPlayerTurn = () => {
   if (winner === true) {
     return;
-  } else if (turn === "X") {
-    turn = "O";
+  } else if (turn === "🎆") {
+    turn = "🎇";
   } else {
-    turn = "X";
+    turn = "🎆";
   }
 };
 
